@@ -1,0 +1,29 @@
+;;ThienNgo Nguyen Le-CS 3210-Fall 2017
+;;==========================================================================================
+;;twin: receives a list and doubles all elements.
+;;parameters:
+;;   lst - a list of elements.
+;;assumptions:
+;;   the list is not nested.
+
+(defun twin(lst)
+  (cond((null lst) ())
+       (t (cons (car lst) (cons (car lst) (twin (cdr lst)))))
+   )
+
+)
+
+;;test plan for twin:
+;;category/description         data                      expected result
+;;----------------------------------------------------------------------------------------
+;;empty list                  ()                      nil
+;;list of numbers             (1 23 5 78 9 33 10)     (1 1 23 23 5 5 78 78 9 9 33 33 10 10)
+;;list of words               (cat dog chicken)       (cat cat dog dog chicken chicken)
+;;list of numbers and words   (1 cat 2 dog orchids)   (1 1 cat cat 2 2 dog dog orchids orchids)
+
+(setf data1 '())
+(setf data2 '(1 23 5 78 9 33 10))
+(setf data3 '(cat dog chicken))
+(setf data4 '(1 cat 2 dog orchids))
+(setf data5 '(dog 2 cat))
+(setf data6 '(3 3 4))

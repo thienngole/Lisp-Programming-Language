@@ -1,0 +1,26 @@
+;;ThienNgo Nguyen Le-CS 3210-Fall 2017
+;;==========================================================================================
+;;adder function:
+;;parameters:
+;;
+;;assumptions:
+;;
+;;
+;;
+;;
+
+(defun untwin( lst)
+  (cond ((null lst) ())
+        ((equal (car lst) (car (cdr lst))) (cons (car(cdr lst)) (untwin (cdr(cdr lst))) ) )
+        (t (cons (car lst) (untwin (cdr lst))))
+   )
+)
+
+;;test plan for adder:
+;;category/description                         data                                expected result
+;;------------------------------------------------------------------------------------------------------------------------
+;;
+;;
+;;
+;;
+;;

@@ -1,0 +1,37 @@
+;;ThienNgo Nguyen Le-CS 3210-Fall 2017
+;;==========================================================================================
+;;match: counts how many times an interger the is found in the list.
+;;parameters:
+;;   num - an integer to find.
+;;   lst - a list of integers.
+;;assumptions:
+;;   this function only works for list of intergers.
+(defun match(num lst)
+  (cond ((null lst) 0)
+        ((equal num (car lst))
+         (+ 1 (match num (cdr lst))) )
+        (t (match num (cdr lst)))
+   )
+)
+
+;;test plan for match:
+;;category/description                  data                            expected result
+;;-------------------------------------------------------------------------------------
+;;2 and a empty list                    2 ()                                0          
+;;2 and a list has no 2                 2 (1 3 4 5 6 7 8 9)                 0
+;;2 and a list has one 2                2 (1 3 2 4 5 6 9 8 7)               1
+;;2 and a list has more than three 2    2 (2 1 3 2 4 2 5 7 2 8 9 2)         4
+
+(setf data1 '(1 3 4 5 6 7 8 9))
+(setf data2 '(1 3 2 4 5 6 9 8 7))
+(setf data3 '(2 1 3 2 4 2 5 7 2 8 9 2))
+(setf data4 '(11  20  5  84))
+(setf data5 '(101 101 (88 123) 15 (101) ((17 82 101) (44))))
+(setf data6 '())
+
+(setf num1 '2)
+(setf num2 '2)
+(setf num3 '2)
+(setf num4 '23)
+(setf num5 '101)
+(setf num6 '2)
